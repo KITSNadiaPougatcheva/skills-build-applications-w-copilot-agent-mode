@@ -1,5 +1,5 @@
 import express from 'express';
-import { connectToDatabase } from './config/database.js';
+import mongoose from 'mongoose';
 import { Activity, LeaderboardEntry, Team, User, Workout } from './models.js';
 
 const app = express();
@@ -67,7 +67,7 @@ app.post(['/api/workouts', '/api/workouts/'], async (req, res) => {
 
 async function startServer() {
   try {
-    await connectToDatabase(mongoUri);
+    await mongoose.connect(mongoUri);
     console.log(`Connected to MongoDB at ${mongoUri}`);
 
     app.listen(port, () => {
