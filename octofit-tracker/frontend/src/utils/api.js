@@ -1,7 +1,7 @@
 export function getApiBaseUrl() {
   const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
 
-  if (codespaceName) {
+  if (codespaceName && codespaceName !== 'localhost') {
     return `https://${codespaceName}-8000.app.github.dev`
   }
 
@@ -9,8 +9,9 @@ export function getApiBaseUrl() {
 }
 
 export function getApiUrl(path) {
-  const baseUrl = getApiBaseUrl()
-  return new URL(path, `${baseUrl}/`).toString()
+  // const baseUrl = getApiBaseUrl()
+  // return new URL(path, `${baseUrl}/`).toString()
+  return path.startsWith('/') ? path : `/${path}`
 }
 
 export function normalizeCollectionResponse(payload) {
