@@ -1,0 +1,11 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+.card {
+  border: 0;
+}
