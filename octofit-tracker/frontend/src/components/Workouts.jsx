@@ -10,6 +10,7 @@ function Workouts() {
     async function loadWorkouts() {
       try {
         // /api/workouts/
+        // -8000.app.github.dev/api/workouts/
         const response = await fetch(getApiUrl('/api/workouts/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)

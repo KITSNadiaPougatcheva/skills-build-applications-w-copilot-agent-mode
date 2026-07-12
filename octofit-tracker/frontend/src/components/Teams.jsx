@@ -10,6 +10,7 @@ function Teams() {
     async function loadTeams() {
       try {
         // /api/teams/
+        // -8000.app.github.dev/api/teams/
         const response = await fetch(getApiUrl('/api/teams/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)

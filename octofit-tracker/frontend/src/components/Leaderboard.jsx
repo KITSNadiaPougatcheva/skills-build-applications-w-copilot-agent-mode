@@ -10,6 +10,7 @@ function Leaderboard() {
     async function loadLeaderboard() {
       try {
         // /api/leaderboard/
+        // -8000.app.github.dev/api/leaderboard/
         const response = await fetch(getApiUrl('/api/leaderboard/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
