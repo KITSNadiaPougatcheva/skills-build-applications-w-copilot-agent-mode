@@ -9,9 +9,9 @@ export function getApiBaseUrl() {
 }
 
 export function getApiUrl(path) {
-  const baseUrl = getApiBaseUrl()
-  return new URL(path, `${baseUrl}/`).toString()
-  // return path.startsWith('/') ? path : `/${path}`
+  // const baseUrl = getApiBaseUrl()
+  // return new URL(path, `${baseUrl}/`).toString()
+  return path.startsWith('/') ? path : `/${path}`
 }
 
 export function normalizeCollectionResponse(payload) {
