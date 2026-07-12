@@ -9,7 +9,8 @@ function Users() {
   useEffect(() => {
     async function loadUsers() {
       try {
-        const response = await fetch(getApiUrl('/api/users'))
+        // /api/users/
+        const response = await fetch(getApiUrl('/api/users/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
         }

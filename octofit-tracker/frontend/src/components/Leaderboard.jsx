@@ -9,7 +9,8 @@ function Leaderboard() {
   useEffect(() => {
     async function loadLeaderboard() {
       try {
-        const response = await fetch(getApiUrl('/api/leaderboard'))
+        // /api/leaderboard/
+        const response = await fetch(getApiUrl('/api/leaderboard/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
         }

@@ -9,6 +9,7 @@ function Activities() {
   useEffect(() => {
     async function loadActivities() {
       try {
+        // /api/activities/
         const response = await fetch(getApiUrl('/api/activities/'))
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
